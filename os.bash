@@ -17,7 +17,7 @@ os.installed? () {
 
 # distro identifies whether we are on a mac or ubuntu
 os.distro () {
-  [[ $OSTYPE == darwin-* ]] && {
+  [[ $OSTYPE == darwin* ]] && {
     echo mac
     return
   }
