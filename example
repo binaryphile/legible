@@ -1,29 +1,30 @@
 #!/usr/bin/env bash
 
-# dir is this script's dir, normalized for symlinks
-dir=$(cd $(dirname $(readlink $BASH_SOURCE || echo $BASH_SOURCE)) && pwd -P)
+# HERE is this script's directory, normalized for symlinks
+HERE=$(cd "$(dirname "$(readlink "$BASH_SOURCE" || echo "$BASH_SOURCE")")" && pwd -P)
 
-# framework imports
-legible=$dir/vendor/legible
-source $legible/hash.bash
-source $legible/in.bash
-source $legible/os.bash
-source $legible/out.bash
-source $legible/str.bash
-source $legible/sys.bash
+LEGIBLE=$HERE/vendor/LEGIBLE
+source "$LEGIBLE"/sys.bash
 
 # shell directives
 sys.wordSplitOnSpaceAndTab  off
 sys.globbing                off
 sys.aliases                 on
 
-# our name
-prog=$(basename $0)
+# framework imports
+source $LEGIBLE/hash.bash
+source $LEGIBLE/in.bash
+source $LEGIBLE/os.bash
+source $LEGIBLE/out.bash
+source $LEGIBLE/str.bash
 
-Usage=$(in.readHeredoc <<END
+# our name
+PROG=$(basename $0)
+
+USAGE=$(in.readHeredoc <<END
   Do something cool.
 
-  Usage: $prog [OPTIONS] [--] [COMMAND]
+  USAGE: $PROG [OPTIONS] [--] [COMMAND]
 
   Options:
 
@@ -35,7 +36,7 @@ Usage=$(in.readHeredoc <<END
 
     docool -  do something cool (default if no command supplied)
 
-  Without a command or with docool, $prog does something cool.
+  Without a command or with docool, $PROG does something cool.
 END
 )
 
@@ -45,21 +46,19 @@ main () {
   case $arg in
     ''|docool ) doCool;;
     * )
-      sys.rc 2 || sys.die "Unknown argument '$arg'"
+      sys.rc 2
+      sys.die "Unknown argument '$arg'"
       ;;
   esac
 }
 
 # doCool does something cool
 doCool () {
-    out.println "I just did something cool."
+  out.println "I just did something cool."
 }
 
 # globals
-coolness=total
-
-# constants
-Mycool=value
+COOLNESS=total
 
 # __name__ != '__main__'
 sys.sourced? && return
@@ -68,14 +67,14 @@ sys.sourced? && return
 sys.strict on
 
 # option defaults
-verbose=0
+VERBOSE=0
 
 # parse options
 while [[ ${1:-} == -?* ]]; do
   case $1 in
-    --help  ) sys.die "$Usage"  ;;
+    --help  ) sys.die "$USAGE"  ;;
     --trace ) sys.trace on      ;;
-    -v      ) verbose=1         ;;
+    -v      ) VERBOSE=1         ;;
     -- )
       shift
       break

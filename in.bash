@@ -6,13 +6,12 @@ alias in.readlns=cat
 # indentation from all lines of the heredoc based on the indentation of the
 # first line.
 in.readHeredoc () {
-  local indent input nl
+  local indent input
 
-  nl=$'\n'
   input=$(in.readlns)
   indent=${input%%[^[:space:]]*}
   input=${input#$indent}
-  echo "${input//$nl$indent/$nl}"
+  echo "${input//$NL$indent/$NL}"
 }
 
 # readKeySilent reads a key from stdin without local echo

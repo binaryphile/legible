@@ -6,8 +6,14 @@ str.blank? () {
   [[ ${1:-} =~ ^[[:space:]]*$ ]]
 }
 
+# capitalize capitalizes the first letter
 str.capitalize () {
   echo ${1^}
+}
+
+# equals? compares two strings exactly
+str.equals? () {
+  [[ ${1:-} == "${2:-}" ]]
 }
 
 # replace replaces all instances of the second argument with the third in the

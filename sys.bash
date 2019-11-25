@@ -1,5 +1,7 @@
 # sys.bash - shell/system functions
 
+NL=$'\n'
+
 # aliases controls whether shell aliases can be used in scripts
 sys.aliases () {
   case $1 in
@@ -59,6 +61,6 @@ sys.trace () {
 sys.wordSplitOnSpaceAndTab () {
   case $1 in
     on  ) IFS=$' \t\n';;
-    off ) IFS=$'\n'   ;;
+    off ) IFS=$NL     ;;
   esac
 }

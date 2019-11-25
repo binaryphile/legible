@@ -7,6 +7,13 @@ The format is based on [Keep a Changelog] and this project adheres to
 Latest Changes
 ==============
 
+[unreleased]
+------------
+
+### Added
+
+-   **str.equals?**
+
 [0.0.2] - 2019-07-26
 --------------------
 
@@ -23,5 +30,6 @@ Latest Changes
 
   [Keep a Changelog]: http://keepachangelog.com/
   [Semantic Versioning]: http://semver.org/
+  [unreleased]: https://github.com/binaryphile/legible/compare/0.0...0.0.2
   [0.0.2]: https://github.com/binaryphile/legible/compare/0.0.2...0.0.1
   [0.0.1]: https://github.com/binaryphile/legible/tree/0.0.1
