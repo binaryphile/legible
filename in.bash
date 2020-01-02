@@ -1,7 +1,5 @@
 # in.bash - read from stdin
 
-alias in.readlns=cat
-
 # readHeredoc reads either a heredoc or until EOF from stdin.  It removes
 # indentation from all lines of the heredoc based on the indentation of the
 # first line.
@@ -20,4 +18,9 @@ in.readKeySilent () {
 
   read -sn 1 input
   echo $input
+}
+
+# readlns is cat
+in.readlns () {
+  cat "$@"
 }

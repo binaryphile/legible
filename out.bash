@@ -1,7 +1,5 @@
 # out.bash - write to stdout
 
-alias out.printf=printf
-
 # print concatenates the arguments to stdout.  Outputs nothing if no arguments.
 out.print () {
   local arg
@@ -9,6 +7,11 @@ out.print () {
   for arg; do
     printf %s "$arg"
   done
+}
+
+# printf is printf
+out.printf () {
+  printf "$@"
 }
 
 # println writes the arguments to stdout with newlines appended to each.
