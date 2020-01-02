@@ -7,6 +7,8 @@ The format is based on [Keep a Changelog] and this project adheres to
 Latest Changes
 ==============
 
+-   **hash.empty?**
+
 [0.0.3] - 2019-11-24
 --------------------
 

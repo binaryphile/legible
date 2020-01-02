@@ -4,7 +4,7 @@
 hash.empty? () {
   local -n Name=$1
 
-  (( ${#Name[*]} ))
+  ! (( ${#Name[*]} ))
 }
 
 # keys lists the keys of the given hashname
