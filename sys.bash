@@ -43,8 +43,8 @@ sys.sourced? () {
 # variables
 sys.strict () {
   case $1 in
-    on  ) set -euo pipefail;;
-    off ) set +euo pipefail;;
+    on  ) set -eu;;
+    off ) set +eu;;
   esac
 }
 
