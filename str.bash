@@ -21,3 +21,9 @@ str.equals? () {
 str.replace () {
   echo ${1//$2/$3}
 }
+
+# toLowerCase converts all the characters in the argument to lowercase
+# value of the first argument
+str.toLowerCase () {
+  echo ${1,,}
+}

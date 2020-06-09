@@ -16,6 +16,8 @@ Latest Changes
 
 -   **hash.empty?**
 
+-   **str.toLowerCase**
+
 -   remove pipefail from strict\_mode
 
 [0.0.3] - 2019-11-24
