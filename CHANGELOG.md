@@ -16,6 +16,8 @@ Latest Changes
 
 -   **hash.empty?**
 
+-   remove pipefail from strict\_mode
+
 [0.0.3] - 2019-11-24
 --------------------
 
@@ -28,7 +30,7 @@ Latest Changes
 
 ### Fixed
 
--   *os.distro* mac detection is fixed
+-   **os.distro** mac detection is fixed
 
 [0.0.1] - 2019-07-23
 --------------------
