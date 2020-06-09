@@ -10,6 +10,10 @@ Latest Changes
 [unreleased]
 ------------
 
+-   **in.readlns**
+
+-   **out.printf**
+
 -   **hash.empty?**
 
 [0.0.3] - 2019-11-24
